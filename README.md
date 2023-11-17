@@ -26,8 +26,24 @@ pip install -r requirements.txt
 
 ## Dataset
 
-In this dataset we have provided new markup for mirror ball for [Cube++ dataset](https://zenodo.org/records/4153431). All markup is provided in markup folder [markup](https://github.com/createcolor/IDE/develop/markup).
+In this dataset we have provided new markup for mirror ball for [Cube++ dataset](https://zenodo.org/records/4153431). All markup is provided in markup folder [markup](https://github.com/createcolor/IDE/tree/develop/markup).
+
+## Dataset generation
+
+To generate GT distributions we need to use script [data_generator.py](https://github.com/createcolor/IDE/blob/develop/dataset_generators/dataset_generator.py) from folder [markup_generation](https://github.com/createcolor/IDE/tree/develop/dataset_generators).
+This script is to generate
+ball .PNG crops,
+ball masks for generated .PNG crops,
+ball markup w\ maximum level on the full image for every channel
+using full image .PNGs and ball markup for cube crops, as well as
+GT illumination distribution .PNG and .npy files for mirror ball crops
+using crops .PNGs and masks.
+
+The usage example with local paths:
+```
+python dataset_generators/dataset_generator.py --path_to_markup markup/ --path_to_save_cube3p ../data/cube_3p/ball_crops_png/ --path_to_cube2p ../Cube++/
+```
 
 ## Solutions
 
-TODO
+#TODO
